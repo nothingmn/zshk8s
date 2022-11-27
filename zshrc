@@ -116,3 +116,56 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source "$HOME/.cargo/env"
+
+#useful aliases
+
+#Terminal
+alias c="clear"
+alias x="exit"
+alias e="code -n ~/ ~/.zshrc ~/.aliases ~/.colors ~/.hooks"
+alias r="source ~/.zshrc"
+
+#history
+alias h="history -10" # last 10 history commands
+alias hc="history -c" # clear history
+alias hg="history | grep " # +command
+
+
+#alias
+alias ag="alias | grep " # +command
+
+#npm
+alias rnm="rm -rf node_modules"
+alias rbn="rm -rf build node_modules"
+alias rap="rm -rf build coverage node_modules package-lock.json && npm i"
+alias cap="clean && rap"
+
+alias npk="npx npkill" #clean unused node_modules
+alias nkp="npx kill-port " # +portnumber
+alias nfk="npx fkill-cli" # +[<pid|name|:port> …] #kill processes
+
+alias nlg="npm list -g --depth 0" #list global packages installed
+
+alias ni="npm i"
+alias nis="npm i -S " # +package@version
+alias nise="npm i -S -E " # +package@version
+alias nid="npm i -D " # +package@version
+alias nide="npm i -D -E " # +package@version
+alias nr="npm r " # +package@version
+
+alias nrb="npm run build"
+alias nrbd="npm run build:dev"
+alias nrbq="npm run build:qa"
+alias nrs="npm run start"
+alias nrsd="npm run start:dev"
+alias nrsq="npm run start:qa"
+alias nrt="npm run test"
+alias nrtc="npm run test:c" #test with coverage
+
+alias np="npm run build && npm publish"
+alias nu="npm unpublish " # +package@version
+
+
+
+
+
