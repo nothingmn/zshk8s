@@ -4,7 +4,7 @@ LABEL version="0.1"
 LABEL description="This is custom Docker Image for zsh with k8s, autocomplete, etc."
 RUN apt update -y
 RUN apt install -y --no-install-recommends \
-	locales curl ca-certificates apt-transport-https git nano zsh wget openssh-client build-essential htop nslookup dig \
+	locales curl ca-certificates apt-transport-https git nano zsh wget openssh-client build-essential htop dnsutils \
         # .NET dependencies
         libc6 \
         libgcc1 \
@@ -13,6 +13,8 @@ RUN apt install -y --no-install-recommends \
         #libssl1.1 \
         libstdc++6 \
         zlib1g
+
+
 
 
 # Set the locale
@@ -55,8 +57,14 @@ RUN wget https://cht.sh/:cht.sh -O cht.sh
 RUN chmod +x cht.sh
 RUN mv cht.sh /usr/bin/cht.sh
 
+#docker in docker
+RUN curl -sSL https://get.docker.com/ | sh
+
 #copy over our .zshrc file
 COPY ./zshrc /root/.zshrc
+
+#copy over our .zshrc file
+COPY .gitconfig /root/.gitconfig
 
 # clean apt cache
 RUN apt-get clean
