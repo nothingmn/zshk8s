@@ -1,5 +1,5 @@
 #!/bin/bash
-# docker container run -ti robchartier/zshk8s
+
 if [ $# -eq 0 ]
   then
 	docker container run \

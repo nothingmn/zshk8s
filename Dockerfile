@@ -40,11 +40,16 @@ RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | 
 RUN export NVM_DIR="$HOME/.nvm"
 
 #dotnet
-RUN wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-RUN dpkg -i packages-microsoft-prod.deb
-RUN apt update
-RUN apt install -y dotnet-sdk-7.0
-RUN rm packages-microsoft-prod.deb
+#RUN wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+#RUN dpkg -i packages-microsoft-prod.deb
+#RUN apt update
+#RUN apt install -y dotnet-sdk-7.0
+#RUN rm packages-microsoft-prod.deb
+RUN wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
+RUN chmod +x dotnet-install.sh
+RUN mkdir /root/.dotnet
+RUN mv dotnet-install.sh /root/.dotnet/
+
 
 #Rust
 #RUN wget https://sh.rustup.rs -O rustup-init.sh

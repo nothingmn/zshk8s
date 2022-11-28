@@ -109,7 +109,7 @@ source <(kubectl completion zsh)
 source ~/.oh-my-zsh/plugins/kube-ps1/kube-ps1.plugin.zsh
 
 export DOTNET_ROOT=$HOME/.dotnet
-
+export PATH=$HOME/.dotnet:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -117,6 +117,8 @@ export NVM_DIR="$HOME/.nvm"
 
 source "$HOME/.rsvm/rsvm.sh"
 #source "$HOME/.cargo/env"
+
+
 
 
 #useful aliases
