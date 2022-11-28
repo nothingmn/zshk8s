@@ -47,10 +47,17 @@ RUN apt install -y dotnet-sdk-7.0
 RUN rm packages-microsoft-prod.deb
 
 #Rust
-RUN wget https://sh.rustup.rs -O rustup-init.sh
-RUN chmod +x rustup-init.sh
-RUN sh rustup-init.sh -y
-RUN rm rustup-init.sh
+#RUN wget https://sh.rustup.rs -O rustup-init.sh
+#RUN chmod +x rustup-init.sh
+#RUN sh rustup-init.sh -y
+#RUN rm rustup-init.sh
+#Rust version manager
+RUN git clone https://github.com/sdepold/rsvm.git /root/.rsvm
+RUN wget https://raw.github.com/sdepold/rsvm/master/install.sh
+RUN chmod +x install.sh
+RUN sh install.sh -y
+RUN rm install.sh
+
 
 #cheat sheet 
 RUN wget https://cht.sh/:cht.sh -O cht.sh
