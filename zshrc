@@ -76,7 +76,7 @@ HIST_STAMPS="yyyy-mm-yy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker dotnet history kubectl kubectx node npm nvm rust)
+plugins=(git docker dotnet history kubectl kubectx kubetail node npm nvm rust)
 
 source $ZSH/oh-my-zsh.sh
 
