@@ -72,6 +72,12 @@ RUN mv cht.sh /usr/bin/cht.sh
 #docker in docker
 RUN curl -sSL https://get.docker.com/ | sh
 
+
+#EKS - AWS Kubernetes https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html
+RUN curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+RUN mv /tmp/eksctl /usr/local/bin
+
+
 #copy over our .zshrc file
 COPY ./zshrc /root/.zshrc
 
