@@ -4,16 +4,18 @@ zshk8s
 Utility docker environment which contains dotnet, rust, nvm (node version manager), cheatsheet, and so on (check the dockerfile for full details).
 
 
-Usage
+Usage - Running
 ----
 
-#!/bin/bash
-docker container run \
-	-v /var/run/docker.sock:/var/run/docker.sock \
-	-v ~/.ssh:/root/.ssh \
-	-v ~/.kube/:/root/.kube \
-	-v ~/source:/root/source \
-	-it robchartier/zshk8s
+In 'run.sh' in this repo we find sample shell script to get the full feature set
+
+    #!/bin/bash
+    docker container run \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+        -v ~/.ssh:/root/.ssh \
+        -v ~/.kube/:/root/.kube \
+        -v ~/source:/root/source \
+        -it robchartier/zshk8s
 
 Volumes:
 ----
@@ -32,5 +34,17 @@ Mount your kubeconfigs
     -v ~/source:/root/source
 
 Mount your root folder for all your source projects
+
+
+
+Usage - Building
+----
+After editing the Dockerfile, or any of the other environment specific files, just run 'build.sh'.  
+
+
+Usage - Publishing
+----
+Once build, publish to docker hub with 'publish.sh'
+
 
 
