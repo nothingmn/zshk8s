@@ -2,7 +2,6 @@
 	editor = nano
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore
-	autocrlf = true
 [push]
 	default = upstream
 [color]
