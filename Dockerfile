@@ -108,7 +108,12 @@ RUN ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/_kubens.z
 #Kubetail
 RUN git clone https://github.com/johanhaleby/kubetail.git /root/.oh-my-zsh/custom/plugins/kubetail
 
+#go version manager https://medium.com/web-developer/go-version-manager-gobrew-c8750157dfe6
+RUN curl -sLk https://git.io/gobrew | sh -
 
+#eks-node-viewer
+#RUN gobrew use 1.19.4
+#RUN go install github.com/awslabs/eks-node-viewer/cmd/eks-node-viewer@latest
 
 #copy over our .zshrc file
 COPY ./zshrc /root/.zshrc

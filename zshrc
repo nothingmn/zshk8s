@@ -118,8 +118,8 @@ export NVM_DIR="$HOME/.nvm"
 source "$HOME/.rsvm/rsvm.sh"
 #source "$HOME/.cargo/env"
 
-
-
+#go
+export PATH="$HOME/go/bin:$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$PATH"
 
 #useful aliases
 
