@@ -51,11 +51,11 @@ RUN export NVM_DIR="$HOME/.nvm"
 #RUN apt update
 #RUN apt install -y dotnet-sdk-7.0
 #RUN rm packages-microsoft-prod.deb
+# https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script
 RUN wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O dotnet-install.sh
 RUN chmod +x dotnet-install.sh
 RUN mkdir /root/.dotnet
 RUN mv dotnet-install.sh /root/.dotnet/
-
 
 #Rust
 #RUN wget https://sh.rustup.rs -O rustup-init.sh
@@ -104,6 +104,8 @@ RUN chmod -R 755 ~/.oh-my-zsh/completions
 RUN ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/_kubectx.zsh
 RUN ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/_kubens.zsh
 
+#k9s
+RUN curl https://webinstall.dev/k9s | sh
 
 #Kubetail
 RUN git clone https://github.com/johanhaleby/kubetail.git /root/.oh-my-zsh/custom/plugins/kubetail

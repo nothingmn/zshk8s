@@ -121,6 +121,9 @@ source "$HOME/.rsvm/rsvm.sh"
 #go
 export PATH="$HOME/go/bin:$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$PATH"
 
+#k9s
+export PATH="/root/.local/bin:$PATH"
+
 #useful aliases
 
 #Terminal
@@ -169,7 +172,7 @@ alias nrtc="npm run test:c" #test with coverage
 alias np="npm run build && npm publish"
 alias nu="npm unpublish " # +package@version
 
-
+alias kt="kubetail"
 
 
 
